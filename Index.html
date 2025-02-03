@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Forever Valentine 🌸💓</title>
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-pink: #ff8fab;
+            --soft-white: #fff9fb;
+            --gold-accent: #ffd700;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #fff0f5 0%, #ffe5ec 100%);
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        .page {
+            position: absolute;
+            width: 100%;
+            min-height: 100vh;
+            padding: 2rem;
+            transition: transform 1s cubic-bezier(0.23, 1, 0.32, 1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        /* Envelope Page */
+        #letter-page {
+            cursor: pointer;
+            background: var(--soft-white);
+        }
+
+        .envelope-container {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+            filter: drop-shadow(0 10px 20px rgba(255,143,171,0.2));
+        }
+
+        .envelope {
+            position: relative;
+            z-index: .5;
+            width: 100%;
+            animation: float 2s ease-in-out infinite;
+        }
+
+        .letter-content {
+            position: absolute;
+            top: -5%;
+            left: 50%;
+            transform: translate(-50%, -60%);
+            width: 80%;
+            text-align: center;
+            z-index: 1;
+        }
+
+        /* Question Page */
+        #question-page {
+            transform: translateY(100%);
+            background: linear-gradient(150deg, #ffb3c6 0%, #ff8095 100%);
+        }
+
+        .question-box {
+            background: var(--soft-white);
+            padding: 3rem 4rem;
+            border-radius: 2rem;
+            box-shadow: 0 15px 40px rgba(255,143,171,0.3);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Final Page */
+        #final-page {
+            transform: translateY(100%);
+            background: var(--soft-white);
+        }
+        
+        /* last Page */
+        #last-page {
+            transform: translateY(100%);
+            background: var(--soft-white);
+        }
+        
+        .heart-video {
+            width: 100%;
+            max-width: 800px;
+            border-radius: 1rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin: 2rem 0;
+        }
+
+        /* Typography */
+        h1, h2 {
+            font-family: 'Parisienne', cursive;
+            color: #d14d72;
+            margin-bottom: 1.5rem;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+        }
+
+        .message {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Buttons */
+        .button-group {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .valentine-btn {
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 2rem;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .yes-btn {
+            background: #d14d72;
+            color: white;
+            box-shadow: 0 5px 15px rgba(209,77,114,0.3);
+        }
+
+        .no-btn {
+            background: #ffb3c6;
+            color: #d14d72;
+            box-shadow: 0 5px 15px rgba(255,179,198,0.3);
+        }
+
+        .valentine-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        .nxt-btn {
+            background: #d14d72;
+            color: white;
+            box-shadow: 0 5px 15px rgba(209,77,114,0.3);
+        }
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .floating-heart {
+            position: absolute;
+            animation: float 4s infinite;
+            opacity: 0.7;
+            z-index: -1;
+        }
+
+        .blossom {
+            position: absolute;
+            animation: fall 8s linear infinite;
+            opacity: 0.8;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-10vh) rotate(0deg); }
+            100% { transform: translateY(110vh) rotate(360deg); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .question-box { padding: 2rem; }
+            .valentine-btn { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Elements -->
+    <div class="floating-heart" style="left:10%;top:20%">🌷</div>
+    <div class="floating-heart" style="right:15%;top:30%">💮</div>
+    <div class="blossom" style="left:5%;font-size:2rem">🌷</div>
+    <div class="blossom" style="right:10%;font-size:1.5rem">💮</div>
+
+    <!-- Page 1: Envelope -->
+    <div class="page active" id="letter-page">
+        <div class="envelope-container">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIj48cGF0aCBkPSJNMTk1IDQ1TDEwMCAxNDAgNSA0NWMtMTAtMTAtNS0yNSA1LTI1aDE4MGMxMCAwIDE1IDE1IDUgMjV6IiBmaWxsPSIjZmY4ZmFiIi8+PHBhdGggZD0iTTEwIDE1djE0MGgxODBWMjBMMTAwIDE0MCAxMCAyMHYtNXoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" 
+                 alt="Envelope" class="envelope">
+            <div class="letter-content">
+                <h1>for My Dearest Dharitri</h1>
+                <p class="message">Tap...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 2: Question -->
+    <div class="page" id="question-page">
+        <div class="question-box">
+            <h2>My Sweet love,</h2>
+            <p class="message">may i be your valentine? so dat i can be the happiest person?😭😭🙏</p>
+            <div class="button-group">
+                <button class="valentine-btn yes-btn">Yas, Absolutely  
+                
+                (  you hab no choice)👅</button>
+                <button class="valentine-btn no-btn">Maybe Later....☹️☹️</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 3: Final -->
+    <div class="page" id="final-page">
+        <video width="300" height="220" controls class="heart-video" autoplay loop muted playsinline>
+            <source src="gf.mp4" type="video/mp4">
+        </video>
+        <div class="question-box">
+            <h2>You've Made My Heart Bloom! 🌷</h2>
+            <p class="message">
+                To my forever Valentine,<br>
+                Thank u smm for choosing me to share this beautiful journey with you.<br>
+                Every moment with u is like a treasure ill alwys cherish.<br>
+                I love you smm more than anthing🫶
+                
+               <div class="button-group">
+                <button class="valentine-btn nxt-btn">next
+                   </button>
+            </p>
+        </div>
+    </div>
+  
+    <!-- Page 4: last -->
+    <div class="page" id="last-page">
+        <video width="100" height="100" controls class="heart-video" autoplay loop muted playsinline>
+            <source src="g.mp4" type="video/mp4">
+        </video>
+        <div class="question-box">
+            
+            <p class="message">
+               Im sowrry im 1 day late but i didnt forget my shitty ass me i was not able to code this within time😔🙏 mb plizzz forgive me 🙏,<br>
+                
+                so its finally our 3 months out of infinite all these days passing but my lobe for u is increasing day by dsy thankuu smm for being with me ik i play game too much and i am not able to talk with u more so plizzz forgib me😔 <br>
+                 and im so gratefull that i got u in my life i csn never be sm delighted with anyone else your my best the only my everything ,i love u smm the most😭😭😻
+            </p>
+        </div>
+    </div>
+    <script>
+        // Page Transitions
+        document.getElementById('letter-page').addEventListener('click', () => {
+            document.getElementById('letter-page').style.transform = 'translateY(-100%)';
+            document.getElementById('question-page').style.transform = 'translateY(0)';
+        });
+
+        // Interactive No Button
+        let noClicks = 0;
+        const cuteMessages = [
+            "wow u clicked no☹️",
+            "damnn the audacity 🤌",
+            "owkayy icic u don lob me😭",
+            "You're breaking my heart 💔",
+            "still u have no choice🥰😛",
+            "told you🥰 now click yess dummy","dammn click yess🙏nigger"];
+
+        document.querySelector('.no-btn').addEventListener('click', function() {
+            noClicks++;
+            this.textContent = cuteMessages[Math.min(noClicks-1, cuteMessages.length-1)];
+            
+            // Create floating hearts
+            for(let i = 0; i < 3; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'floating-heart';
+                heart.style.left = Math.random() * 90 + '%';
+                heart.style.top = Math.random() * 90 + '%';
+                heart.innerHTML = '💖';
+                document.body.appendChild(heart);
+                setTimeout(() => heart.remove(), 3000);
+            }
+
+            // Enlarge Yes button
+            const yesBtn = document.querySelector('.yes-btn');
+            yesBtn.style.transform = `scale(${1 + noClicks*0.1})`;
+        });
+
+        // Yes Button Handler
+        document.querySelector('.yes-btn').addEventListener('click', function() {
+            document.getElementById('question-page').style.transform = 'translateY(-100%)';
+            document.getElementById('final-page').style.transform = 'translateY(0)';
+
+
+
+            // Add celebration elements
+            const celebration = document.createElement('div');
+            celebration.innerHTML = `
+                <div style="position:fixed; top:0; left:0; width:100%; height:100%; 
+                    background: radial-gradient(circle, transparent 60%, rgba(255,143,171,0.3) 80%); 
+                    pointer-events: none; z-index: 999;">
+                </div>
+            `;
+            document.body.appendChild(celebration);
+        });
+
+
+        // nxt Button Handler
+        document.querySelector('.nxt-btn').addEventListener('click', function() {
+            document.getElementById('final-page').style.transform = 'translateY(0)';
+            document.getElementById('last-page').style.transform = 'translateY(0)';
+
+        });
+
+
+        // Blossom animation
+        function createBlossom() {
+            const blossom = document.createElement('div');
+            blossom.className = 'blossom';
+            blossom.style.left = Math.random() * 100 + '%';
+            blossom.style.fontSize = `${Math.random() * 20 + 10}px`;
+            blossom.innerHTML = Math.random() > 0.5 ? '🌷' : '💮';
+            document.body.appendChild(blossom);
+            
+            setTimeout(() => blossom.remove(), 8000);
+        }
+        setInterval(createBlossom, 2000);
+    </script>
+</body>
+</html>
